@@ -31,8 +31,6 @@ main()  # Call the main function to start the program.
 
 
 """
-
-
         # List - ordered and changeable, duplicates allowed
         my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         print("List:", my_list)
@@ -109,33 +107,5 @@ main()  # Call the main function to start the program.
         gen = fibonacci()
         for _ in range(rnd.randint(1, 100)):
             print("random fibonacci number:", next(gen))
-
-
-        # Degrees to radians
-        def degrees_to_radians(degrees):
-            return degrees * (math.pi / 180)
-
-        # Radians to degrees
-        def radians_to_degrees(radians):
-            return radians * (180 / math.pi)
-
-        arr = rnd.randint(1, 100)
-        arr_deg = degrees_to_radians(arr)
-        arr_rad = radians_to_degrees(arr_deg)
-
-        print("arr_deg:", arr_deg)
-        print("arr_rad:", arr_rad)
-        print("arr:", arr)
-
-        # complete
-        complete = 1
-
-        # Complete the program
-        if complete == 1:
-            print("Program completed successfully.")
-        else:
-            print("Program not completed.")
-            continue
-        break
 
 """

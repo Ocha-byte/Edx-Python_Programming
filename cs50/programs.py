@@ -28,4 +28,5 @@ def main():
     print("20. Decrypted Scramble")
     print("21. Decrypt")
     print("22. Unscramble")
-    print("23. Exit")
+    print("23. Angle conversion")
+    print("24. Exit")

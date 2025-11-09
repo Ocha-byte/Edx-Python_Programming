@@ -58,6 +58,8 @@ def main():
     elif choice == "22":
         fun.unscramble()
     elif choice == "23":
+        fun.deg_or_rads()
+    elif choice == "24":
         print("Exiting...")
     else:
         print("Invalid choice")

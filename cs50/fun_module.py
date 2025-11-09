@@ -379,3 +379,25 @@ def unscramble():
     text = input("Enter text to unscramble: ")
     unscrambled = "".join(rnd.sample(text, len(text)))
     print("Unscrambled text:", unscrambled)
+
+
+def deg_to_rads(degrees):
+    return degrees * (math.pi / 180)
+
+
+def rads_to_deg(radians):
+    return radians * (180 / math.pi)
+
+
+def deg_or_rads():
+    angle = input("Which angle do you want to convert? (degrees or radians): ")
+    if angle.lower() == "degrees":
+        degrees = float(input("Enter degrees: "))
+        radians = deg_to_rads(degrees)
+        print(f"{degrees} degrees is {radians} radians.")
+    elif angle.lower() == "radians":
+        radians = float(input("Enter radians: "))
+        degrees = rads_to_deg(radians)
+        print(f"{radians} radians is {degrees} degrees.")
+    else:
+        print("Invalid input. Please enter 'degrees' or 'radians'.")
