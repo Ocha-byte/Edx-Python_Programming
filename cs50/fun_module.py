@@ -2,8 +2,10 @@
 # Interpretied: Python module.py
 # This file exists to keep my code tidy and organized.
 
+import numpy as np
 import random as rnd
 import math as math
+import matplotlib.pyplot as plt
 
 
 def sqrt(x):
@@ -29,21 +31,28 @@ def fibonacci():
         a, b = b, a + b
 
 
-def main():
-    complete = 0
-    while complete != 1:
-        print("Hello, world!")
-
-        # complete
-        complete = 1
-
-        # Complete the program
-        if complete == 1:
-            print("Program completed successfully.")
-        else:
-            print("Program not completed.")
-            continue
-        break
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
 
 
-main()  # Call the main function to start the program.
+def add(x, y):
+    return x + y
+
+
+def subtract(x, y):
+    return x - y
+
+
+def multiply(x, y):
+    return x * y
+
+
+def divide(x, y):
+    return x / y
+
+
+def power(x, y):
+    return x**y

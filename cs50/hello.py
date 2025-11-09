@@ -7,86 +7,205 @@
 
 import fun_module as fun
 
-# import numpy as np
+import numpy as np
 import random as rnd
 import math as math
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 
 def main():
-    # variables
-    # x = 10
-    # y = 2 * np.cos(x)
-    #
     complete = 0
     while complete != 1:
-        # get user input
-        name = input("What's your name? ").strip().title()
-        print hello user input.
-        print(f"Hello {name}!")
-        print("Hello world!", end=" ")
-        currentMonth = 11
-        Month = (float)12
-        print(type(Month))
-        print("There are", Month, "months in a year")
-        print('The current month is', currentMonth)
-        print(f"(x,y) = ({x}, {y})")
+        print("")
+        print("Which program would you like to run?")
+        print("1. Hello World")
+        print("2. Hello User")
+        print("3. Casting Months")
+        print("4. Plotting")
+        print("5. Arithmetic Operations")
+        print("6. Powers")
+        print("7. Odd Even")
+        print("8. Positive Negative Zero")
+        print("9. Fruity Arrays")
+        print("10. Complex Numbers")
+        print("11. Bit Operations")
+        print("12. Exit")
+        choice = input("Enter your choice: ")
 
-        # x = float(input("Enter a number: "))
-        # y = float(input("Enter another number: "))
-        # z_add = round(x + y)
-        # z_prod = round(x * y)
-        # z_div = round(x / y)
-        # z_sub = round(x - y)
+        if choice == "1":
+            print("Hello world!")
+        elif choice == "2":
+            name = input("What's your name? ").strip().title()
+            print(f"Hello, {name}!")
+        elif choice == "3":
+            currentMonth = 11
+            Month = float(12)
+            print(type(Month))
+            print("There are", Month, "months in a year")
+            print("The current month is", currentMonth)
+        elif choice == "4":
+            x = input("Enter a number: ")
+            x = float(x)
+            y = 2 * np.cos(x)
+            y = float(y)
+            print(f"(x,y) = ({x}, {y})")
+            plt.plot(x, y)
+            plt.show()
+        elif choice == "5":
+            x = float(input("Enter a number: "))
+            y = float(input("Enter another number: "))
+            operation = input("Enter operation (+, -, *, /, ^): ")
+            if operation == "+":
+                result = fun.add(x, y)
+            elif operation == "-":
+                result = fun.sub(x, y)
+            elif operation == "*":
+                result = fun.mul(x, y)
+            elif operation == "/":
+                result = fun.div(x, y)
+            elif operation == "^":
+                result = fun.pow(x, y)
+            else:
+                print("Invalid operation")
+            print(f"{x} {operation} {y} = {result}")
+            print("Operation completed")
+        elif choice == "6":
+            x = float(input("Enter a number: "))
+            operation = input(
+                "Enter operation (sqr, square, nth_power, nth_root, factorial): "
+            )
+            if operation == "sqr":
+                result = fun.sqr(x)
+            elif operation == "square":
+                result = fun.square(x)
+            elif operation == "nth_power":
+                n = int(input("Enter the power: "))
+                result = fun.nth_power(x, n)
+            elif operation == "nth_root":
+                n = int(input("Enter the root: "))
+                result = fun.nth_root(x, n)
+            elif operation == "factorial":
+                result = fun.factorial(x)
+            else:
+                print("Invalid operation")
+            print(f"{operation}({x}) = {result}")
+            print("Operation completed")
+        elif choice == "7":
+            x = float(input("Enter a number: "))
+            if x % 2 == 0:
+                print(f"{x} is even")
+            else:
+                print(f"{x} is odd")
+                print("Operation completed")
+        elif choice == "8":
+            x = float(input("Enter a number: "))
+            if x > 0:
+                print(f"{x} is positive")
+            elif x < 0:
+                print(f"{x} is negative")
+            else:
+                print(f"{x} is zero")
+                print("Operation completed")
+        elif choice == "9":
+            fruit1, fruit2, fruit3 = "apple", "banana", "orange"
+            fruit4 = fruit5 = fruit6 = "lime"
+            fruits = [fruit1, fruit2, fruit3, fruit4, fruit5, fruit6]
+            print(fruits[0])
+            print(fruits[1])
+            print(fruits[2])
+            print(fruits[0] + fruits[1] + fruits[2])
+            print(fruits[3] + fruits[4] + fruits[5])
+            print("Operation completed")
+        elif choice == "10":
+            Re = float(input("Enter a real number: "))
+            Im = float(input("Enter an imaginary number: "))
+            print(f"The complex number is: {Re + Im * 1j}")
+            Op = input("Enter an operation (+, -, *, /, Polar, Cartesian): ")
+            if Op == "+":
+                print(f"The sum is: {Re + Im * 1j + Re + Im * 1j}")
+            elif Op == "-":
+                print(f"The difference is: {Re + Im * 1j - Re + Im * 1j}")
+            elif Op == "*":
+                print(f"The product is: {Re + Im * 1j * Re + Im * 1j}")
+            elif Op == "/":
+                print(f"The quotient is: {Re + Im * 1j / Re + Im * 1j}")
+            elif Op == "Polar":
+                print(f"The polar representation is: {abs(Re + Im * 1j)}")
+            elif Op == "Cartesian":
+                print(f"The Cartesian representation is: {Re + Im * 1j}")
+            else:
+                print("Invalid operation")
+            plot = input("Would you like to plot? (yes/no): ")
+            if plot == "yes":
+                type = input("What type of plot? Polar, Cartesian, or Both? (p,c,b): ")
+                if type == "p":
+                    print(f"Polar plot of {Re + Im * 1j}")
+                    r = np.arange(0, 2 * np.pi, 0.01)
+                    theta = 2 * np.pi * r
+                    plt.polar(r, theta)
+                    plt.show()
+                elif type == "c":
+                    print(f"Cartesian plot of {Re + Im * 1j}")
+                    x = np.linspace(-10, 10, 100)
+                    y = np.linspace(-10, 10, 100)
+                    X, Y = np.meshgrid(x, y)
+                    Z = X + Y * 1j
+                    plt.contourf(X, Y, np.abs(Z - (Re + Im * 1j)), cmap="viridis")
+                    plt.colorbar()
+                    plt.show()
+                elif type == "b":
+                    print(f"Both plots of {Re + Im * 1j}")
+                else:
+                    print("Invalid plot type")
+            elif plot == "no":
+                print("Not plotting.")
+                print("Operation completed")
+            else:
+                print("Invalid response.")
 
-        # print(f"The sum of {x} and {y} is {z_add:,.2f}")
-        # print(f"The product of {x} and {y} is {z_prod:,.2f}")
-        # print(f"The difference of {x} and {y} is {z_sub:,.2f}")
-        # print(f"The quotient of {x} and {y} is {z_div:,.2f}")
-        # print(f"The remainder of {x} and {y} is {x % y:.2f}")
-        # print(f"The power of {x} and {y} is {x**y:.2f}")
+        elif choice == "11":
+            bit0 = bool(input("Enter bit value: (0 or 1): "))
+            bit1 = bool(input("Enter bit value: (0 or 1): "))
+            Op = input(
+                "Enter operation: (and, or, xor, left shift, right shift, left rotate, right rotate, bitwise and, bitwise or, bitwise xor): "
+            )
+            if Op == "and":
+                print(f"AND operation of {bit0} and {bit1}: {bit0 and bit1}")
+            elif Op == "or":
+                print(f"OR operation of {bit0} and {bit1}: {bit0 or bit1}")
+            elif Op == "xor":
+                print(f"XOR operation of {bit0} and {bit1}: {bit0 ^ bit1}")
+            elif Op == "left shift":
+                print(f"Left shift operation of {bit0} by {bit1}: {bit0 << bit1}")
+            elif Op == "right shift":
+                print(f"Right shift operation of {bit0} by {bit1}: {bit0 >> bit1}")
+            elif Op == "left rotate":
+                print(
+                    f"Left rotate operation of {bit0} by {bit1}: {bit0 << bit1 | bit0 >> (8 - bit1)}"
+                )
+            elif Op == "right rotate":
+                print(
+                    f"Right rotate operation of {bit0} by {bit1}: {bit0 >> bit1 | bit0 << (8 - bit1)}"
+                )
+            elif Op == "bitwise and":
+                print(f"Bitwise AND operation of {bit0} and {bit1}: {bit0 & bit1}")
+            elif Op == "bitwise or":
+                print(f"Bitwise OR operation of {bit0} and {bit1}: {bit0 | bit1}")
+            elif Op == "bitwise xor":
+                print(f"Bitwise XOR operation of {bit0} and {bit1}: {bit0 ^ bit1}")
+            elif Op == "bitwise not":
+                print(f"Bitwise NOT operation of {bit0}: {~bit0}")
+            else:
+                print("Invalid operation")
+                print("Operation completed")
+        elif choice == "12":
+            print("Exiting...")
+            complete = 1
+        else:
+            print("Invalid choice")
 
-        # print(f"The square root of {x} is {sqrt(x):.2f}")
-        # print(f"{x}^2 = {square(x):.2f}")
 
-        # print(f"{x}^3 = {nth_power(x, 3):.2f}")
-        # print(f"The cube root of {x} is {nth_root(x, 3):.2f}")
-
-        # for i in range(1, 11):
-        #    if i % 2 == 0:
-        #        print(f"{i} is even")
-        #    else:
-        #        print(f"{i} is odd")
-        # print("Done")
-
-        # fruit1, fruit2, fruit3 = "apple", "banana", "orange"
-        # fruit4 = fruit5 = fruit6 = "lime"
-        # fruits = [fruit1, fruit2, fruit3, fruit4, fruit5, fruit6]
-
-        # print(fruits[0])
-        # print(fruits[1])
-        # print(fruits[2])
-        # print(fruits[0] + fruits[1] + fruits[2])
-        # print(fruits[3] + fruits[4] + fruits[5])
-
-        # imagine = 1 + 2j
-        # print(imagine)
-
-        # r = range(10)
-        # print(list(r))
-
-        # a = True
-        # b = False
-        # c = a and b  # AND gate
-        # d = a or b  # OR gate
-        # e = not a
-        # f = a ^ b  # XOR gate
-        # g = a & b  # Bitwise AND
-        # h = a | b  # Bitwise OR
-        # i = a ^ b  # Bitwise XOR
-        # j = a << 2  # Left shift
-        # k = a >> 1  # Right shift
-
+"""
         a = True
         b = True
 
@@ -256,5 +375,6 @@ def main():
             continue
         break
 
+"""
 
 main()  # Call the main function to start the program.
