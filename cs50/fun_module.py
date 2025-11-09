@@ -1,5 +1,5 @@
 # Written by Charles Underwood
-# This module exists to keep my code tidy and organized.
+# This module exists to store functions.
 
 import numpy as np
 import random as rnd
@@ -340,7 +340,42 @@ def fibonacci():
     while True:
         yield a
         a, b = b, a + b
+        print(a)
 
 
-def op_s():
-    print("The operation was successful.")
+def scramble():
+    text = input("Enter text to scramble: ")
+    scrambled = "".join(rnd.sample(text, len(text)))
+    print("Scrambled text:", scrambled)
+
+
+def encrypt():
+    text = input("Enter text to encrypt: ")
+    encrypted = "".join(chr(ord(c) + 3) for c in text)
+    print("Encrypted text:", encrypted)
+
+
+def encrypted_scramble():
+    text = input("Enter text to encrypt and scramble: ")
+    encrypted = "".join(chr(ord(c) + 3) for c in text)
+    scrambled = "".join(rnd.sample(encrypted, len(encrypted)))
+    print("Encrypted and scrambled text:", scrambled)
+
+
+def decrypted_scramble():
+    text = input("Enter text to decrypt and scramble: ")
+    decrypted = "".join(chr(ord(c) - 3) for c in text)
+    scrambled = "".join(rnd.sample(decrypted, len(decrypted)))
+    print("Decrypted and scrambled text:", scrambled)
+
+
+def decrypt():
+    text = input("Enter text to decrypt: ")
+    decrypted = "".join(chr(ord(c) - 3) for c in text)
+    print("Decrypted text:", decrypted)
+
+
+def unscramble():
+    text = input("Enter text to unscramble: ")
+    unscrambled = "".join(rnd.sample(text, len(text)))
+    print("Unscrambled text:", unscrambled)

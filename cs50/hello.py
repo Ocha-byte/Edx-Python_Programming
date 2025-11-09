@@ -2,62 +2,32 @@
 # Interpretied: Python hello.py
 # The main file with mostly my own code.
 
-import fun_module as fun  # My local module
+# My local modules
 import programs as prog
+import selection as sel
 
-import numpy as np
-import random as rnd
-import math as math
-import matplotlib.pyplot as plt
-import datetime as dt
+import threading
+import asyncio
 
 
 def main():
     complete = 0
+
+    # create a lock
+    process_lock = threading.Lock()
+
     while complete != 1:
         prog.main()
 
-        choice = 0  # Pre-allocation
+        sel.main()
 
-        choice = input("Enter your choice: ")
-
-        if choice == "1":
-            print("Hello world!")
-        elif choice == "2":
-            fun.hello_user()
-        elif choice == "3":
-            fun.cmonth()
-        elif choice == "4":
-            fun.plotting()
-        elif choice == "5":
-            fun.arithmetic_operations()
-        elif choice == "6":
-            fun.powers()
-        elif choice == "7":
-            fun.divider()
-        elif choice == "8":
-            fun.pos_or_neg()
-        elif choice == "9":
-            fun.fruity_array()
-        elif choice == "10":
-            fun.complex_numbers()
-        elif choice == "11":
-            fun.bit_ops()
-        elif choice == "12":
-            fun.adders()
-        elif choice == "13":
-            fun.rnd_pi()
-        elif choice == "14":
-            fun.check_prime()
-        elif choice == "15":
-            fun.odd_evens()
-        elif choice == "16":
-            fun.fibonacci()
-        elif choice == "17":
-            print("Exiting...")
+        if sel.user_choice() == 23:
             complete = 1
         else:
-            print("Invalid choice")
+            complete = 0
+
+
+main()  # Call the main function to start the program.
 
 
 """
@@ -169,5 +139,3 @@ def main():
         break
 
 """
-
-main()  # Call the main function to start the program.
