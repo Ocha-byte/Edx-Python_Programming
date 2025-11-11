@@ -5,7 +5,15 @@
 import tkinter as tk
 import tkinter.font as tkfont
 
-import menu_buttons as mb
+import main_menu as mm
+import menus.about_menu as am
+import menus.contact_menu as cm
+import menus.dictionary_menu as dm
+import menus.help_menu as hm
+import menus.personal_stats_menu as psm
+import menus.practice_menu as pracm
+import menus.profile_menu as pfm
+import menus.settings_menu as sm
 
 # Initialize the root window
 root = tk.Tk()
@@ -24,20 +32,7 @@ button_frame = tk.Frame(main_frame)
 button_frame.grid_rowconfigure(0, weight=1)
 button_frame.grid_columnconfigure(0, weight=1)
 
-# Pack the buttons into the button frame
-mb.main_menu_button(root).grid(row=0, column=0)
-mb.profile_button(root).grid(row=0, column=1)
-mb.practice_button(root).grid(row=0, column=2)
-
-mb.personal_stats_button(root).grid(row=1, column=0)
-mb.dictionary_button(root).grid(row=1, column=1)
-mb.settings_button(root).grid(row=1, column=2)
-
-mb.about_button(root).grid(row=2, column=0)
-mb.help_button(root).grid(row=2, column=1)
-mb.contact_button(root).grid(row=2, column=2)
-
-mb.exit_button(root).grid(row=3, column=1)
+mm.display_main_menu(root)
 
 # Resize the window to fit the content
 root.resizable(True, True)
