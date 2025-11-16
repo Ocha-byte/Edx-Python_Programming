@@ -1,6 +1,7 @@
-Edx-Python_Programming/au-ch_clock/build/
-Edx-Python_Programming/au-ch_clock/dist/
-Edx-Python_Programming/au-ch_clock/__pycache__/
-Edx-Python_Programming/cs50/__pycache__/
-Edx-Python_Programming/learning_german/__pycache__/
-Edx-Python_Programming/learning_german/menus/__pycache__/
+au-ch_clock/build/
+au-ch_clock/dist/
+au-ch_clock/__pycache__/
+cs50/__pycache__/
+learning_german/__pycache__/
+learning_german/menus/__pycache__/
+au-ch_clock/__pycache__/draw_clock.cpython-313.pyc
