@@ -9,10 +9,12 @@ root.title("Australia-Switzerland Clock")
 # Timezones
 tz_au = "Australia/Brisbane"
 tz_ch = "Europe/Zurich"
+tz_ca = "America/Vancouver"
 
 # Start drawing the clock
 au_clock = dc.digital_clock(root, tz_au)
 ch_clock = dc.digital_clock(root, tz_ch)
+ca_clock = dc.digital_clock(root, tz_ca)
 
 # Run the Tkinter event loop
 root.mainloop()
