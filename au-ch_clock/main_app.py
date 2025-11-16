@@ -4,7 +4,7 @@ import draw_clock as dc
 
 # Create a Tkinter window
 root = tk.Tk()
-root.title("Australia-Switzerland Clock")
+root.title("Simple Digital Clock")
 
 # Timezones
 tz_au = "Australia/Brisbane"
