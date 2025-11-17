@@ -1,19 +1,10 @@
 # Written by Charles Underwood
 # To run: Python main.py
 # The main app file.
-
 import tkinter as tk
 import tkinter.font as tkfont
 
-import main_menu as mm
-import menus.about_menu as am
-import menus.contact_menu as cm
-import menus.dictionary_menu as dm
-import menus.help_menu as hm
-import menus.personal_stats_menu as psm
-import menus.practice_menu as pracm
-import menus.profile_menu as pfm
-import menus.settings_menu as sm
+import set_menu
 
 # Initialize the root window
 root = tk.Tk()
@@ -32,14 +23,13 @@ button_frame = tk.Frame(main_frame)
 button_frame.grid_rowconfigure(0, weight=1)
 button_frame.grid_columnconfigure(0, weight=1)
 
-mm.display_main_menu(root)
-
 # Resize the window to fit the content
 root.resizable(True, True)
 
+# Set the font
+font = tkfont.Font(family="Helvetica", size=16, weight="bold")
+
+set_menu.current_display(root, "main_menu")
+
 # Root window main loop
 root.mainloop()
-
-
-def main():
-    print("")

@@ -4,4 +4,6 @@ au-ch_clock/__pycache__/
 cs50/__pycache__/
 learning_german/__pycache__/
 learning_german/menus/__pycache__/
+learning_german/dist/
+learning_german/build/
 au-ch_clock/__pycache__/draw_clock.cpython-313.pyc
